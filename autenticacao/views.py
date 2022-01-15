@@ -28,8 +28,8 @@ def cadastro(request):
 
     try:
       user = User.objects.create_user(username=username,
-        email=email,
-        password=senha)
+            email=email,
+            password=senha)
       
       user.save()
       messages.add_message(request, constants.SUCCESS, 'Usuário cadastrado com sucesso')
@@ -55,3 +55,8 @@ def logar(request):
     else:
       auth.login(request, usuario)
       return redirect('/')
+
+
+def sair(request):
+  auth.logout(request)
+  return redirect('/auth/logar')

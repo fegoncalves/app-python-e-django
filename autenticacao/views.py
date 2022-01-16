@@ -5,7 +5,6 @@ from django.contrib import messages
 from django.contrib.messages import constants
 from django.contrib import auth
 
-# Create your views here.
 def cadastro(request):
   if request.method == "GET":
     if request.user.is_authenticated:
@@ -15,6 +14,7 @@ def cadastro(request):
     username = request.POST.get('username')
     email = request.POST.get('email')
     senha = request.POST.get('senha')
+    print(username, email, senha)
 
     if len(username.strip()) == 0 or len(email.strip()) == 0 or len(senha.strip()) == 0:
       messages.add_message(request, constants.ERROR, 'Preencha todos os campos')

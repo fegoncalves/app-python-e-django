@@ -27,13 +27,13 @@
           <p style="margin-top:-20px" class="cor_branca descricao">Nos melhores preços</p>
           <br>
           <br>
-          <a class="btn_logar" href="{% url 'logar' %}">Cadastre-se</a>
+          <a class="btn_logar" href="{% url 'cadastro' %}">Cadastre-se</a>
         </div>
       </div>
     </div>
     <div class="col-md-9">
       <div class="area_cadastrar">
-        <form action="{% url 'cadastro' %}" method="POST">{% csrf_token %}
+        <form action="{% url 'logar' %}" method="POST">{% csrf_token %}
           <!-- token do django para validar falsificação de formulário -->
 
           <h2 class="titulo_area_cadastrar">Logar</h2>
